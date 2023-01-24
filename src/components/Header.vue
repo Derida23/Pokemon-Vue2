@@ -1,34 +1,16 @@
 <template>
-  <v-app-bar app color="primary" dark>
-    <div class="d-flex align-center">
+  <v-app-bar app color="#E7E8F1" dark elevation="0">
+    <div class="d-flex align-center justify-space-between w-full">
       <v-img
         alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        transition="scale-transition"
-        width="40"
-      />
-
-      <v-img
-        alt="Vuetify Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-        width="100"
+        src="../assets/img/pokemon-logo.png"
+        width="120"
       />
     </div>
-
     <v-spacer></v-spacer>
 
-    <v-btn
-      href="https://github.com/vuetifyjs/vuetify/releases/latest"
-      target="_blank"
-      text
-    >
-      <span class="mr-2">Latest Release</span>
-      <v-icon>mdi-open-in-new</v-icon>
+    <v-btn icon class="mr-3" width="30">
+      <v-img alt="Vuetify Name" src="../assets/img/pokecatch.png" width="10" />
     </v-btn>
   </v-app-bar>
 </template>
@@ -42,3 +24,9 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss" scoped>
+.bg-red {
+  background: red;
+}
+</style>
