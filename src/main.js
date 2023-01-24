@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 import "@/assets/styles/_global.scss";
+import "@/assets/styles/_variable.scss";
 
 Vue.config.productionTip = false;
 

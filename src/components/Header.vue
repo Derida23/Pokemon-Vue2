@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar app color="#E7E8F1" dark elevation="0">
-    <div class="d-flex align-center justify-space-between w-full">
+  <v-app-bar app color="#E7E8F1" dark elevation="0" class="h-app">
+    <div class="d-flex align-center justify-space-between pl-5">
       <v-img
         alt="Vuetify Logo"
         src="../assets/img/pokemon-logo.png"
@@ -9,9 +9,16 @@
     </div>
     <v-spacer></v-spacer>
 
-    <v-btn icon class="mr-3" width="30">
-      <v-img alt="Vuetify Name" src="../assets/img/pokecatch.png" width="10" />
-    </v-btn>
+    <div class="pr-10">
+      <v-btn icon class="text-lowercase">
+        <span class="mr-2 t-catch">0 Catch</span>
+        <v-img
+          alt="Vuetify Name"
+          src="../assets/img/pokecatch.png"
+          width="20"
+        />
+      </v-btn>
+    </div>
   </v-app-bar>
 </template>
 
@@ -26,7 +33,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg-red {
-  background: red;
+.h-app {
+  .t-catch {
+    color: #252525;
+    font-weight: 600;
+    font-size: 16px;
+  }
 }
 </style>
