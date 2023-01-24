@@ -1,16 +1,16 @@
 <template>
-  <v-app-bar app color="#E7E8F1" dark elevation="0" class="h-app">
+  <v-app-bar app color="#E7E8F1" elevation="0" class="h-app">
     <div class="d-flex align-center justify-space-between pl-5">
       <v-img
         alt="Vuetify Logo"
         src="../assets/img/pokemon-logo.png"
-        width="120"
+        width="110"
       />
     </div>
     <v-spacer></v-spacer>
 
     <div class="pr-10">
-      <v-btn icon class="text-lowercase">
+      <v-btn depressed rounded class="text-lowercase">
         <span class="mr-2 t-catch">0 Catch</span>
         <v-img
           alt="Vuetify Name"
