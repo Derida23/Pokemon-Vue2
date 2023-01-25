@@ -8,9 +8,10 @@
         <p-text-field v-model="search"></p-text-field>
       </v-col>
     </v-row>
-    <Loading v-if="loading" />
+    <div class="text-center">
+      <Loading v-if="loading" />
+    </div>
     <Pokemon />
-    <pre>{{ queryError }}</pre>
     <Error v-if="queryError" :error="queryError" />
   </div>
 </template>
@@ -21,6 +22,7 @@ import Loading from "@/components/Form/Loading.vue";
 import pTextField from "@/components/Form/pTextField.vue";
 import Pokemon from "@/components/Pokemon.vue";
 import { mapActions, mapState } from "vuex";
+import debounce from "lodash/debounce";
 export default {
   components: { pTextField, Loading, Error, Pokemon },
   name: "HomeView",
@@ -32,12 +34,21 @@ export default {
   mounted() {
     this.getList();
   },
-  methods: {
-    getList() {
-      return {
-        ...mapActions(["findPokemon"]),
-      };
+  watch: {
+    search() {
+      this.handleSearch();
     },
+  },
+  methods: {
+    ...mapActions(["findPokemon"]),
+
+    async getList() {
+      return this.findPokemon("pikachu");
+    },
+
+    handleSearch: debounce(function () {
+      this.findPokemon(this.search);
+    }, 500),
   },
   computed: {
     ...mapState(["loading", "queryError"]),

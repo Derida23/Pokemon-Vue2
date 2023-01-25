@@ -1,5 +1,8 @@
 <template>
-  <div>{{ error }}</div>
+  <div class="text-center">
+    Pokemon
+    {{ error }}
+  </div>
 </template>
 
 <script>

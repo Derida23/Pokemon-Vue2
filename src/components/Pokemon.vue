@@ -1,10 +1,10 @@
 <template>
   <div class="pokemon">
     <template v-if="pokemon">
-      <h2>N°{{ pokemon.id }} {{ pokemon.name.toUpperCase() }}</h2>
+      <h2>N°{{ pokemon.id }} {{ pokemon?.name?.toUpperCase() }}</h2>
       <img
-        v-if="pokemon.sprites.front_default"
-        :src="pokemon.sprites.front_default"
+        v-if="pokemon?.sprites?.front_default"
+        :src="pokemon?.sprites?.front_default"
         :alt="pokemon.name"
       />
       <p>
@@ -32,7 +32,7 @@
     </template>
 
     <template v-if="queryEmpty">
-      <p>Deberías escribir algo...</p>
+      <p>Pokemon not found</p>
     </template>
   </div>
 </template>
